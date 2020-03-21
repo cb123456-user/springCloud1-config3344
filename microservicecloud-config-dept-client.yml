@@ -63,6 +63,6 @@ eureka:
 info: #超链接点击展示此微服务信息
   app.name: microservicecloud1
   company.name: www.xxx.com
-  build.artifactId: $project.artifactId
-  build.version: $project.version
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
 
