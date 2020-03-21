@@ -1,0 +1,68 @@
+spring:
+    profiles:
+        active: dev
+
+---
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.cb.springcloud1.entities    # 所有Entity别名类所在包
+  mapper-locations: classpath:mybatis/mapper/**/*.xml   # mapper映射文件
+
+spring:
+   application:
+    name: microservicecloud-config-dept-client  #向eureka服务端注册时的实例名称
+   profiles: dev
+   datasource:
+    url: jdbc:mysql://localhost:3306/cloudDB01              # 数据库名称
+    username: root
+    password: "000000"
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: microservicecloud-config-dept8001 #自定义服务名称信息
+    prefer-ip-address: true #访问路径可以显示IP地址
+
+info: #超链接点击展示此微服务信息
+  app.name: microservicecloud1
+  company.name: www.xxx.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+
+---
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.cb.springcloud1.entities    # 所有Entity别名类所在包
+  mapper-locations: classpath:mybatis/mapper/**/*.xml   # mapper映射文件
+
+spring:
+   application:
+    name: microservicecloud-config-dept-client  #向eureka服务端注册时的实例名称
+   profiles: test
+   datasource:
+    url: jdbc:mysql://localhost:3306/cloudDB02              # 数据库名称
+    username: root
+    password: "000000"
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: microservicecloud-config-dept8001 #自定义服务名称信息
+    prefer-ip-address: true #访问路径可以显示IP地址
+
+info: #超链接点击展示此微服务信息
+  app.name: microservicecloud1
+  company.name: www.xxx.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+
