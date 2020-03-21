@@ -48,7 +48,7 @@ spring:
     name: microservicecloud-config-dept-client  #向eureka服务端注册时的实例名称
    profiles: test
    datasource:
-    url: jdbc:mysql://localhost:3306/cloudDB03              # 数据库名称
+    url: jdbc:mysql://localhost:3306/cloudDB02              # 数据库名称
     username: root
     password: "000000"
 
@@ -63,6 +63,6 @@ eureka:
 info: #超链接点击展示此微服务信息
   app.name: microservicecloud1
   company.name: www.xxx.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
 
