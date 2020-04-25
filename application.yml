@@ -7,7 +7,7 @@ spring:
     application:
         name: microservicecloud1-config-dev
 config:
-    info:  version=1
+    info:  version=3
 ---
 spring:
     profiles: test  #测试环境
